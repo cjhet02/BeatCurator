@@ -32,6 +32,7 @@
 
 <script>
     async function getScores() {
+        response.header('Access-Control-Allow-Origin', '*');
         let username = document.getElementById("idForm").value;
         let url = "https://scoresaber.com";
         let user = await fetch(url + "/api/players", {
