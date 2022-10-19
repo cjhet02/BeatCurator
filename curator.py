@@ -1,10 +1,12 @@
 import requests
 url = "https://scoresaber.com"
-username = "Lorft" #just for testing, will be recieved through form
-Params = {'search':username}
-user = requests.get(url + "/api/players", params=Params)
-res = user.json()
-id = res['players'][0]['id']
+# username = "Lorft" #just for testing, will be recieved through form
+# Params = {'search':username}
+# user = requests.get(url + "/api/players", params=Params)
+# res = user.json()
+# id = res['players'][0]['id']
+id = sys.argv[1]
+
 lim = 10
 Params = {'limit': lim+1}
 scores = requests.get(url + "/api/player/" + id + "/scores", params=Params)
